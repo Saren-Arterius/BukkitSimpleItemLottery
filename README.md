@@ -17,7 +17,9 @@ BukkitSimpleItemLottery
   Example: "/silot byprob 50", everyone will have 50% chance to get the prize.
   
 * **/silot reload** - Reloads the plugin.
-* **/silot help|?** - Get about and help messages.
+* **/silot help** - Get about and help messages.
+
+  Alias: ?
 
 # config.yml
 
