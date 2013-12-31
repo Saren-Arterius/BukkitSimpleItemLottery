@@ -7,7 +7,6 @@ BukkitSimpleItemLottery
 * **/silot byplayers (winnersCount)** - Start item lottery with exact numbers of winners. 
 
   Alias: byplayer, players, player
-
   Example: "/silot byplayers 10", even if you have 1000 players online, the will only be 10 winners.
 
 * **/silot byprob (prob)** - Start item lottery with probability for players to get the prize. 
