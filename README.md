@@ -4,8 +4,12 @@ BukkitSimpleItemLottery
 * **Purpose** - A simple item lottery plugin, what item you are holding is what exactly the prize is.
 
 # Commands
-* **/silot byplayers|byplayer|players|player (winnersCount)** - Start item lottery with exact numbers of winners. Example: /silot byplayers 10
-* **/silot byprob|prob (prob)** - Start item lottery with probability for players to get the prize. Example: /silot byprob 50
+* **/silot byplayers (winnersCount)** - Start item lottery with exact numbers of winners. 
+  Alias: byplayer, players, player
+  Example: "/silot byplayers 10", even if you have 1000 players online, the will only be 10 winners.
+* **/silot byprob (prob)** - Start item lottery with probability for players to get the prize. 
+  Alias: prob
+  Example: "/silot byprob 50", everyone will have 50% chance to get the prize.
 * **/silot reload** - Reloads the plugin.
 * **/silot help|?** - Get about and help messages.
 
