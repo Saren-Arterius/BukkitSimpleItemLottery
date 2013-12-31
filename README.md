@@ -12,28 +12,21 @@ BukkitSimpleItemLottery
 # config.yml
 
     setting:
-    broadcastLotteryResults: True
-    
+        broadcastLotteryResults: True # Display lottery results publicly, or to you only.
     message:
         # Your localizations
+    
 # permissions
 
-    fuck.*:
-        description: Gives access to all BukkitHelloWorld commands.
+    silot.*:
+        description: Gives access to all BukkitSimpleItemLottery commands.
+        default: op
         children:
-            fuck.qualifiedToFuck: true
-            fuck.allowsSelfFucking: true
-            fuck.allowsLimitsOverriding: true
-            fuck.reload: true
-    fuck.qualifiedToFuck:
-        description: Allows you to fuck somebody.
+            silot.use: true
+            silot.reload: true
+    silot.use:
+        description: Gives access to lottery commands.
         default: op
-    fuck.allowsSelfFucking:
-        description: Allows you to fuck yourself.
-        default: op
-    fuck.allowsLimitsOverriding:
-        description: Allows you to override the limits.
-        default: op
-    fuck.reload:
-        description: Allows you to reload your penis.
+    silot.reload:
+        description: Allows player to reload BukkitSimpleItemLottery.
         default: op
