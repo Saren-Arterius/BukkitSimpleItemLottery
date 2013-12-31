@@ -10,12 +10,20 @@ database: false
 commands:
     silot:
         description: Basic command.
-        usage: Type /<command> to use this plugin.
-        permission: silot.canUseThisPlugin
-        permission-message: You are not permitted to use this plugin!
+        usage: Type /<command> ? to get help.
+        permission: silot.use
+        permission-message: §cYou are not permitted to use this command!
 
 permissions:
     silot.*:
         description: Gives access to all BukkitSimpleItemLottery commands.
+        default: op
         children:
-            silot.canUseThisPlugin: true
+            silot.use: true
+            silot.reload: true
+    silot.use:
+        description: Gives access to lottery commands.
+        default: op
+    silot.reload:
+        description: Allows player to reload BukkitSimpleItemLottery.
+        default: op
