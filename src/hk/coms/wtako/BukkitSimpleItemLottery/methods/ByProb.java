@@ -1,6 +1,5 @@
 package hk.coms.wtako.BukkitSimpleItemLottery.methods;
 
-import java.text.MessageFormat;
 import java.util.Random;
 
 import org.bukkit.entity.Player;
@@ -24,9 +23,6 @@ public class ByProb {
 
         for (int i = 0; i < playersList.length; i++) {
             int randNum = generator.nextInt(100);
-            
-            String Msg = MessageFormat.format("randNum: {0}, Prob: {1}, Player: {2}", randNum, prob, playersList[i].getName());
-            presenter.sendMessage(Msg);
             
             if ( (randNum <= prob) && (playersList[i] != presenter) ) { // Presenter won't get the prize
                 try {

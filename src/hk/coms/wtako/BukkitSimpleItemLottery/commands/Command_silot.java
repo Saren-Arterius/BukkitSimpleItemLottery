@@ -1,5 +1,7 @@
 package hk.coms.wtako.BukkitSimpleItemLottery.commands;
 
+import java.text.MessageFormat;
+
 import hk.coms.wtako.BukkitSimpleItemLottery.Main;
 import hk.coms.wtako.BukkitSimpleItemLottery.methods.ByPlayers;
 import hk.coms.wtako.BukkitSimpleItemLottery.methods.ByProb;
@@ -22,7 +24,6 @@ public class Command_silot implements CommandExecutor {
         this.plugin = plugin;
     }
     
-    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("silot")) {
             
@@ -41,7 +42,7 @@ public class Command_silot implements CommandExecutor {
             } else if (args[0].equalsIgnoreCase("byprob")) {
                 
                 if (!(sender instanceof Player)) {
-                    this.plugin.getLogger().info("");
+                    this.plugin.getLogger().info(this.plugin.getConfig().getString("commandForPlayersOnly"));
                     return true;
                 }
                 
@@ -53,7 +54,7 @@ public class Command_silot implements CommandExecutor {
                         throw new Exception("wrongProbValue");
                     }
                 } catch (Exception ex) {
-                    sender.sendMessage("Wrong Value!");
+                    sender.sendMessage(this.plugin.getConfig().getString("message.wrongValueByProb"));
                     return false;
                 }
 
@@ -61,11 +62,11 @@ public class Command_silot implements CommandExecutor {
                 ItemStack prize = presenter.getItemInHand();
                 
                 if (prize.getAmount() <= 0) {
-                    sender.sendMessage("");
+                    sender.sendMessage(this.plugin.getConfig().getString("message.cannotGiveAwayAir"));
                 } else {
                     ByProb lottery = new ByProb(presenter, playersList, prize);
                     Player[] winnersList = lottery.startLottery(prob);
-                    sender.sendMessage("");
+                    sender.sendMessage(this.plugin.getConfig().getString("message.followPlayersGotThePrize"));
                     String msg = "";
                     for (int i = 0; i < winnersList.length; i++) {
                         if (winnersList[i] != null) {
@@ -80,7 +81,7 @@ public class Command_silot implements CommandExecutor {
             } else if (args[0].equalsIgnoreCase("byplayers")) {
                 
                 if (!(sender instanceof Player)) {
-                    this.plugin.getLogger().info("This command is for online players only!");
+                    this.plugin.getLogger().info(this.plugin.getConfig().getString("commandForPlayersOnly"));
                     return true;
                 }
                 
@@ -92,7 +93,9 @@ public class Command_silot implements CommandExecutor {
                         throw new Exception("wrongWinnersValue");
                     }
                 } catch (Exception ex) {
-                    sender.sendMessage("Wrong Value!");
+                    String msg = this.plugin.getConfig().getString("message.wrongValueByPlayers");
+                    msg = MessageFormat.format(msg, playersList.length - 1);
+                    sender.sendMessage(msg);
                     return false;
                 }
 
@@ -100,7 +103,7 @@ public class Command_silot implements CommandExecutor {
                 ItemStack prize = presenter.getItemInHand();
                 
                 if (prize.getAmount() <= 0) {
-                    sender.sendMessage("Cannot giveaway air!");
+                    sender.sendMessage(this.plugin.getConfig().getString("message.cannotGiveAwayAir"));
                 } else {
                     ByPlayers lottery = new ByPlayers(presenter, playersList, prize);
                     Player[] winnersList = lottery.startLottery(winnersCount);

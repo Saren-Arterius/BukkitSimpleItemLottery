@@ -1,9 +1,9 @@
 message:
-    commandForPlayersOnly: This command is for online players only!
+    commandForPlayersOnly: §cThis command is for players only!
     pluginReloadedConsole: §aPlugin reloaded!
     pluginReloadedPlayer: §aPlugin reloaded!
-    youGotThePrize: You got the prize!
-    followPlayersGotThePrize: Success! The following player(s) got the prize:
-    wrongValueByPlayers: 
-    wrongValueByProb: 
-    cannotGiveAwayAir: Cannot give away air!
+    youGotThePrize: §6You got the prize!
+    followPlayersGotThePrize: §aSuccess! The following player(s) got the prize:
+    wrongValueByPlayers: §cWrong Value! The minimum value must be 0 and the maximum value must be online players count - 1! ({0})
+    wrongValueByProb: §cWrong Value! The minimum value must be 0 the maximum value must be 100!
+    cannotGiveAwayAir: §cCannot give away air!
