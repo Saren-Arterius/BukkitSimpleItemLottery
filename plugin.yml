@@ -1,0 +1,21 @@
+name: BukkitSimpleItemLottery
+version: 0.0.1a
+description: Simple item lottery for craftbukkit.
+author: Saren
+website: https://github.com/Shaorune/SimpleItemLottery/
+ 
+main: hk.coms.wtako.BukkitSimpleItemLottery.Main
+database: false
+ 
+commands:
+    silot:
+        description: Basic command.
+        usage: Type /<command> to use this plugin.
+        permission: silot.canUseThisPlugin
+        permission-message: You are not permitted to use this plugin!
+
+permissions:
+    silot.*:
+        description: Gives access to all BukkitSimpleItemLottery commands.
+        children:
+            silot.canUseThisPlugin: true
