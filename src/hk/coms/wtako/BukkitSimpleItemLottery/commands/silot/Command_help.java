@@ -16,7 +16,7 @@ public class Command_help {
         sender.sendMessage("------------------------");
         sender.sendMessage("/silot byprob (prob)");
         sender.sendMessage("Function: A player will have (prob)% chance to be a winner.");
-        sender.sendMessage("Example: '/silot byprob 50', everyone has 50% chance to be a winner.");
+        sender.sendMessage("Example: '/silot byprob 50', everyone will have 50% chance to get the prize.");
         sender.sendMessage("------------------------");
         sender.sendMessage("/silot reload");
         sender.sendMessage("Function: Reloads the plugin.");

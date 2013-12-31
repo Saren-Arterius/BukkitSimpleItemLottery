@@ -44,10 +44,11 @@ public class Command_byplayers {
         
         if (prize.getAmount() <= 0) {
             sender.sendMessage(this.plugin.getConfig().getString("message.cannotGiveAwayAir"));
+            return true;
         } else {
             ByPlayers lottery = new ByPlayers(presenter, playersList, prize);
             Player[] winnersList = lottery.startLottery(winnersCount);
-            sender.sendMessage(this.plugin.getConfig().getString("message.followPlayersGotThePrize"));
+            sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
             String msg = "";
             for (int i = 0; i < winnersList.length; i++) {
                 winnersList[i].sendMessage(this.plugin.getConfig().getString("message.youGotThePrize"));
@@ -56,6 +57,5 @@ public class Command_byplayers {
             sender.sendMessage(msg);
             return true;
         }
-        return false;
     }
 }

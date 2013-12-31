@@ -40,10 +40,11 @@ public class Command_byprob {
         
         if (prize.getAmount() <= 0) {
             sender.sendMessage(this.plugin.getConfig().getString("message.cannotGiveAwayAir"));
+            return true;
         } else {
             ByProb lottery = new ByProb(presenter, playersList, prize);
             Player[] winnersList = lottery.startLottery(prob);
-            sender.sendMessage(this.plugin.getConfig().getString("message.followPlayersGotThePrize"));
+            sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
             String msg = "";
             for (int i = 0; i < winnersList.length; i++) {
                 if (winnersList[i] != null) {
@@ -54,6 +55,5 @@ public class Command_byprob {
             sender.sendMessage(msg);
             return true;
         }
-        return false;
     }
 }
