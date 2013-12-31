@@ -20,6 +20,7 @@ public class Command_byplayers {
     }
     
     public boolean execute(CommandSender sender, Command cmd, String label, String[] args) {
+        
         if (!(sender instanceof Player)) {
             this.plugin.getLogger().info(this.plugin.getConfig().getString("commandForPlayersOnly"));
             return true;
@@ -48,14 +49,23 @@ public class Command_byplayers {
         } else {
             ByPlayers lottery = new ByPlayers(presenter, playersList, prize);
             Player[] winnersList = lottery.startLottery(winnersCount);
-            sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
+            
             String msg = "";
             for (int i = 0; i < winnersList.length; i++) {
                 winnersList[i].sendMessage(this.plugin.getConfig().getString("message.youGotThePrize"));
                 msg += winnersList[i].getName()+", ";
             }
-            sender.sendMessage(msg);
+            
+            if (this.plugin.getConfig().getBoolean("setting.broadcastLotteryResults")) {
+                sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
+                sender.sendMessage(msg);
+            } else {
+                this.plugin.getServer().broadcastMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
+                this.plugin.getServer().broadcastMessage(msg);
+            }
+            
             return true;
         }
+        
     }
 }

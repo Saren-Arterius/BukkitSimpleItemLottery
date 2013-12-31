@@ -8,6 +8,7 @@ public class Command_help {
     public boolean execute(CommandSender sender, Command cmd, String label, String[] args) {
         sender.sendMessage("Bukkit Simple Item Lottery v0.0.1a");
         sender.sendMessage("Author: Saren");
+        sender.sendMessage("Website: https://github.com/Shaorune/SimpleItemLottery/");
         sender.sendMessage("The prize will be you item you are holding.");
         sender.sendMessage("------------------------");
         sender.sendMessage("/silot byplayers (winnersCount)");

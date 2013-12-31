@@ -18,6 +18,7 @@ public class Command_silot implements CommandExecutor {
     }
     
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        
         if (cmd.getName().equalsIgnoreCase("silot")) {
 
             if (args.length == 0) {
@@ -27,11 +28,11 @@ public class Command_silot implements CommandExecutor {
                 Command_reload command = new Command_reload(this.plugin);
                 return command.execute(sender, cmd, label, args);
                 
-            } else if (args[0].equalsIgnoreCase("byprob")) {
+            } else if ((args[0].equalsIgnoreCase("byprob")) || (args[0].equalsIgnoreCase("prob"))) {
                 Command_byprob command = new Command_byprob(this.plugin);
                 return command.execute(sender, cmd, label, args);
                 
-            } else if ((args[0].equalsIgnoreCase("byplayer")) || (args[0].equalsIgnoreCase("byplayers"))) {
+            } else if ((args[0].equalsIgnoreCase("byplayer")) || (args[0].equalsIgnoreCase("byplayers")) || (args[0].equalsIgnoreCase("players")) || (args[0].equalsIgnoreCase("player")) ) {
                 Command_byplayers command = new Command_byplayers(this.plugin);
                 return command.execute(sender, cmd, label, args);
                 
@@ -42,6 +43,7 @@ public class Command_silot implements CommandExecutor {
             }
         }
         return false;
+        
     }
 
 }

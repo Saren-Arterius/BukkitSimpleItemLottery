@@ -1,3 +1,5 @@
+setting:
+    broadcastLotteryResults: True
 message:
     commandForPlayersOnly: §cThis command is for players only!
     pluginReloadedConsole: §aPlugin reloaded!

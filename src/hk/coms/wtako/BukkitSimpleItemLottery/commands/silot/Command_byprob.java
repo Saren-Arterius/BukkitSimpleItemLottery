@@ -44,7 +44,7 @@ public class Command_byprob {
         } else {
             ByProb lottery = new ByProb(presenter, playersList, prize);
             Player[] winnersList = lottery.startLottery(prob);
-            sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
+            
             String msg = "";
             for (int i = 0; i < winnersList.length; i++) {
                 if (winnersList[i] != null) {
@@ -52,7 +52,15 @@ public class Command_byprob {
                     msg += winnersList[i].getName()+", ";
                 }
             }
-            sender.sendMessage(msg);
+            
+            if (this.plugin.getConfig().getBoolean("setting.broadcastLotteryResults")) {
+                sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
+                sender.sendMessage(msg);
+            } else {
+                this.plugin.getServer().broadcastMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
+                this.plugin.getServer().broadcastMessage(msg);
+            }
+
             return true;
         }
     }

@@ -16,6 +16,7 @@ public class Command_reload {
     }
     
     public boolean execute(CommandSender sender, Command cmd, String label, String[] args) {
+        
         if (sender.hasPermission("silot.reload")) {
             Reload reload = new Reload(this.plugin);
             reload.execute();
@@ -27,5 +28,6 @@ public class Command_reload {
             sender.sendMessage(this.plugin.getConfig().getString("message.notPermitted"));
         }
         return true;
+        
     }
 }
