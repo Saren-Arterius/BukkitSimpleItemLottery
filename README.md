@@ -1,7 +1,7 @@
 BukkitSimpleItemLottery
 ================
 * **Name** - SILOT or BukkitSimpleItemLottery or Simple Item Lottery
-* **Purpose** - A simple item lottery plugin, the prize is the item that you are holding.
+* **Purpose** - A simple item lottery plugin, what item you are holding is what exactly the prize is.
 
 # Commands
 * **/silot byplayers|byplayer|players|player (winnersCount)** - Start item lottery with exact numbers of winners. Example: /silot byplayers 10
