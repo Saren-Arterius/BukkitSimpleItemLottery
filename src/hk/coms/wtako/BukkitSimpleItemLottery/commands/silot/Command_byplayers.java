@@ -57,11 +57,11 @@ public class Command_byplayers {
             }
             
             if (this.plugin.getConfig().getBoolean("setting.broadcastLotteryResults")) {
-                sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
-                sender.sendMessage(msg);
-            } else {
                 this.plugin.getServer().broadcastMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
                 this.plugin.getServer().broadcastMessage(msg);
+            } else {
+                sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
+                sender.sendMessage(msg);
             }
             
             return true;

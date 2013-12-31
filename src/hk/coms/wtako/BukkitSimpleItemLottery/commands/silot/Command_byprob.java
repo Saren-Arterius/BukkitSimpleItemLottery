@@ -48,17 +48,17 @@ public class Command_byprob {
             String msg = "";
             for (int i = 0; i < winnersList.length; i++) {
                 if (winnersList[i] != null) {
-                    winnersList[i].sendMessage("");
+                    winnersList[i].sendMessage(this.plugin.getConfig().getString("message.youGotThePrize"));
                     msg += winnersList[i].getName()+", ";
                 }
             }
             
             if (this.plugin.getConfig().getBoolean("setting.broadcastLotteryResults")) {
-                sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
-                sender.sendMessage(msg);
-            } else {
                 this.plugin.getServer().broadcastMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
                 this.plugin.getServer().broadcastMessage(msg);
+            } else {
+                sender.sendMessage(this.plugin.getConfig().getString("message.followingPlayersGotThePrize"));
+                sender.sendMessage(msg);
             }
 
             return true;
