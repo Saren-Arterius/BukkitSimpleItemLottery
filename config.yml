@@ -5,7 +5,7 @@ message:
     pluginReloadedConsole: §aPlugin reloaded!
     pluginReloadedPlayer: §aPlugin reloaded!
     youGotThePrize: §6You got the prize!
-    followingPlayersGotThePrize: §aSuccess! The following player(s) got the prize
+    followingPlayersGotThePrize: "§aThe following player(s) got the prize: "
     wrongValueByPlayers: §cWrong Value! The minimum value must be 0 and the maximum value must be online players count - 1! ({0})
     wrongValueByProb: §cWrong Value! The minimum value must be 0 the maximum value must be 100!
     cannotGiveAwayAir: §cCannot give away air!
